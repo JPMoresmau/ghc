@@ -20,8 +20,10 @@ module Distribution.InstalledPackageInfo.Binary (
        writeBinPackageDB
   ) where
 
-import Distribution.Version
-import Distribution.Package hiding (depends)
+-- import Distribution.Version
+import Data.Version
+-- import Distribution.Package hiding (depends)
+import Distribution.Package (PackageName(..),PackageIdentifier(..),InstalledPackageId(..))
 import Distribution.License
 import Distribution.InstalledPackageInfo as IPI
 import Data.Binary as Bin

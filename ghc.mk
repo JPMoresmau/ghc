@@ -388,7 +388,7 @@ else
 # programs such as GHC and ghc-pkg, that we do not assume the stage0
 # compiler already has installed (or up-to-date enough).
 
-PACKAGES_STAGE0 = Cabal/Cabal hpc bin-package-db hoopl transformers
+PACKAGES_STAGE0 = distribution-base hpc bin-package-db hoopl transformers
 ifeq "$(Windows_Host)" "NO"
 ifneq "$(HostOS_CPP)" "ios"
 PACKAGES_STAGE0 += terminfo
@@ -418,7 +418,7 @@ PACKAGES_STAGE1 += process
 PACKAGES_STAGE1 += hpc
 PACKAGES_STAGE1 += pretty
 PACKAGES_STAGE1 += template-haskell
-PACKAGES_STAGE1 += Cabal/Cabal
+PACKAGES_STAGE1 += distribution-base
 PACKAGES_STAGE1 += binary
 PACKAGES_STAGE1 += bin-package-db
 PACKAGES_STAGE1 += hoopl
@@ -429,6 +429,8 @@ PACKAGES_STAGE2 += old-time
 PACKAGES_STAGE2 += haskell98
 PACKAGES_STAGE2 += haskell2010
 endif
+
+PACKAGES_STAGE2 += Cabal/Cabal
 
 # We normally install only the packages down to this point
 REGULAR_INSTALL_PACKAGES := $(addprefix libraries/,$(PACKAGES_STAGE1))

@@ -11,14 +11,15 @@ module Main (main) where
 
 import Version ( version, targetOS, targetARCH )
 import Distribution.InstalledPackageInfo.Binary()
-import qualified Distribution.Simple.PackageIndex as PackageIndex
+import qualified Distribution.PackageIndex as PackageIndex
 import Distribution.ModuleName hiding (main)
 import Distribution.InstalledPackageInfo
 import Distribution.Compat.ReadP
-import Distribution.ParseUtils
-import Distribution.Package hiding (depends)
+import Distribution.Compat.ParseUtils
+import Distribution.Package (Package(..),PackageIdentifier(..),InstalledPackageId(..)) -- hiding (depends)
 import Distribution.Text
-import Distribution.Version
+-- import Distribution.Version
+import Data.Version
 import System.FilePath as FilePath
 import qualified System.FilePath.Posix as FilePath.Posix
 import System.Process

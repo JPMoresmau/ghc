@@ -24,9 +24,10 @@ module PackageConfig (
 
 import Distribution.InstalledPackageInfo
 import Distribution.ModuleName
-import Distribution.Package hiding (PackageId)
+import Distribution.Package ( PackageIdentifier(..))
 import Distribution.Text
-import Distribution.Version
+-- import Distribution.Version
+import Data.Version     ( Version(..) )
 
 import Maybes
 import Module

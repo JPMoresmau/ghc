@@ -51,7 +51,7 @@ Library
                    containers >= 0.1 && < 0.6,
                    array      >= 0.1 && < 0.5,
                    filepath   >= 1   && < 1.4,
-                   Cabal,
+                   distribution-base >=1.18 && <1.19,
                    hpc,
                    transformers
 

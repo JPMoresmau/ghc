@@ -26,6 +26,8 @@ ifneq "$(BINDIST)" "YES"
 $(ghc-cabal_INPLACE) : $(ghc-cabal_DIST_BINARY) | $$(dir $$@)/.
 	"$(CP)" $< $@
 
+$(ghc-cabal_DIST_BINARY): $(wildcard libraries/distribution-base/Distribution/*/*.hs)
+$(ghc-cabal_DIST_BINARY): $(wildcard libraries/distribution-base/Distribution/*.hs)
 $(ghc-cabal_DIST_BINARY): $(wildcard libraries/Cabal/Cabal/Distribution/*/*/*.hs)
 $(ghc-cabal_DIST_BINARY): $(wildcard libraries/Cabal/Cabal/Distribution/*/*.hs)
 $(ghc-cabal_DIST_BINARY): $(wildcard libraries/Cabal/Cabal/Distribution/*.hs)
@@ -38,6 +40,7 @@ $(ghc-cabal_DIST_BINARY): utils/ghc-cabal/Main.hs $(TOUCH_DEP) | $$(dir $$@)/. b
 	       -DBOOTSTRAPPING \
 	       -odir  bootstrapping \
 	       -hidir bootstrapping \
+	       -ilibraries/distribution-base \
 	       -ilibraries/Cabal/Cabal \
 	       -ilibraries/filepath \
 	       -ilibraries/hpc \
